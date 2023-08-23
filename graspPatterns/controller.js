@@ -33,21 +33,21 @@ submitButton.addEventListener("click", () => {
 
 // Now let's implement the same logic with the Controller pattern:
 
-// Model
+// Model: Represents the data you're working with, which is the user's name in this case.
 class User {
   constructor(name) {
     this.name = name;
   }
 }
 
-// View
+// View: Responsible for rendering the user data. It encapsulates the rendering logic, which allows for easier maintenance and modification if rendering requirements change.
 class UserView {
   render(user) {
     console.log(`User: ${user.name}`);
   }
 }
 
-// Controller
+// Controller: acts as the intermediary between the Model and the View. It handles user input, interacts with the Model to perform actions, and delegates the rendering to the View. It sets up event listeners and coordinates the interactions between the Model and the View.
 class UserController {
   constructor() {
     this.userView = new UserView();
