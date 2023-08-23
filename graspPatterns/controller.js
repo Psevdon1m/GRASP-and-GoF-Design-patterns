@@ -25,7 +25,7 @@ function renderUser(user) {
 const userInput = document.getElementById("user-input");
 const submitButton = document.getElementById("submit-button");
 
-submitButton.addEventListener("clicl", () => {
+submitButton.addEventListener("click", () => {
   const userName = userInput.value;
   const user = new User(userName);
   renderUser(user);
@@ -55,7 +55,7 @@ class UserController {
     this.submitButton = document.getElementById("submit-button");
     this.submitButton.addEventListener(
       "click",
-      this.handleUserInput.bind(this)
+      this.handleUserInput.bind(this) // or use arrow function to preserve the context
     );
   }
   handleUserInput() {
